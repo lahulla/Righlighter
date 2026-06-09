@@ -1,4 +1,16 @@
 
+use std::path::{Path, PathBuf};
+use std::collections::HashSet;
+ 
+use anyhow::{anyhow, bail, Context, Result};
+use hyprland::data::Client;
+use hyprland::prelude::HyprDataActiveOptional;
+use lopdf::Document as LopdfDocument;
+use wl_clipboard_rs::paste::{get_contents, ClipboardType, MimeType, Seat};
+ 
+use crate::storage::{Document, Highlight};
+
+
 struct Highlight{
     
     bookname    :  String,
